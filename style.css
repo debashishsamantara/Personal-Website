@@ -64,14 +64,9 @@ header{
     align-items: center;
     padding: 30px 100px;
 }
-header
-{
-    font-size: 2em;
-    color: #fff;
-    font-weight: 700;
-    text-decoration: none;
-    transition: 0.5s;
-    transform-origin: right;
+.banner.active .content{
+    transform: scale(0);
+    transform-origin: left;
 }
 .toggle
 {
@@ -95,74 +90,171 @@ header
     width: 100%;
     height: 100vh;
 }
+.banner.active.content{
+    transform: scale(0);
+    transform-origin: left;
+}
 #logo{
     position: absolute;
+    stroke-width: 3;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    height: 70%;
+    width: 70%;
 }
 #logo path:nth-child(1){
-    stroke-dasharray: 50px;
-    stroke-dashoffset: 50px;
-    animation: line-anim 2s ease forwards;
 }
 #logo path:nth-child(2){
-    stroke-dasharray: 80.75089263916016px;
-    stroke-dashoffset: 80.75089263916016px;
-    animation: line-anim 2s ease forwards 0.3s;
+    stroke-dasharray:194.87867736816406 ;
+    stroke-dashoffset:194.87867736816406 ;
+    animation: line-anim 2s ease forwards infinite;
 }
 #logo path:nth-child(3){
-    stroke-dasharray: 580.5407104492188px;
-    stroke-dashoffset: 580.5407104492188px;
-    animation: line-anim 2s ease forwards 0.6s;
+    stroke-dasharray:60.21217727661133 ;
+    stroke-dashoffset:60.21217727661133 ;
+    animation: line-anim 2s ease forwards 0.3s infinite;
 }
 #logo path:nth-child(4){
-    stroke-dasharray: 496.1609802246094px;
-    stroke-dashoffset: 496.1609802246094px;
-    animation: line-anim 2s ease forwards 0.9s;
+    stroke-dasharray:428.7409362792969 ;
+    stroke-dashoffset:428.7409362792969 ;
+    animation: line-anim 2s ease forwards 0.6s infinite;
 }
 #logo path:nth-child(5){
-    stroke-dasharray: 402.7506103515625px;
-    stroke-dashoffset: 402.7506103515625px;
-    animation: line-anim 2s ease forwards 1.2s;
+    stroke-dasharray:372.2252502441406 ;
+    stroke-dashoffset:372.2252502441406 ;
+    animation: line-anim 2s ease forwards 0.9s infinite;
 }
 #logo path:nth-child(6){
-    stroke-dasharray: 529.7142333984375px;
-    stroke-dashoffset: 529.7142333984375px;
-    animation: line-anim 2s ease forwards 1.5s;
+    stroke-dasharray:236.07293701171875 ;
+    stroke-dashoffset:236.07293701171875 ;
+    animation: line-anim 2s ease forwards 1.2s infinite;
 }
 #logo path:nth-child(7){
-    stroke-dasharray: 425.60076904296875px;
-    stroke-dashoffset: 425.60076904296875px;
-    animation: line-anim 2s ease forwards 1.8s;
+    stroke-dasharray:313.2466735839844 ;
+    stroke-dashoffset:313.2466735839844 ;
+    animation: line-anim 2s ease forwards 1.5s infinite;
 }
 #logo path:nth-child(8){
-    stroke-dasharray: 428.74456787109375px;
-    stroke-dashoffset: 428.74456787109375px;
-    animation: line-anim 2s ease forwards 2.1s;
+    stroke-dasharray:246.9447021484375 ;
+    stroke-dashoffset:246.9447021484375 ;
+    animation: line-anim 2s ease forwards 1.8s infinite;
 }
 #logo path:nth-child(9){
-    stroke-dasharray: 464px;
-    stroke-dashoffset: 464px;
-    animation: line-anim 2s ease forwards 2.4s;
+    stroke-dasharray:222.40093994140625 ;
+    stroke-dashoffset:222.40093994140625 ;
+    animation: line-anim 2s ease forwards 2.1s infinite;
 }
 #logo path:nth-child(10){
-    stroke-dasharray: 197px;
-    stroke-dashoffset: 197px;
-    animation: line-anim 2s ease forwards 2.7s;
+    stroke-dasharray:335.35321044921875 ;
+    stroke-dashoffset:335.35321044921875 ;
+    animation: line-anim 2s ease forwards 2.4s infinite;
 }
 #logo path:nth-child(11){
-    stroke-dasharray: 428.7447814941406px;
-    stroke-dashoffset: 428.7447814941406px;
-    animation: line-anim 2s ease forwards 3s;
+    stroke-dasharray:166.92405700683594 ;
+    stroke-dashoffset:166.92405700683594 ;
+    animation: line-anim 2s ease forwards 2.7s infinite;
 }
 #logo path:nth-child(12){
-    stroke-dasharray: 464px;
-    stroke-dashoffset: 464px;
-    animation: line-anim 2s ease forwards 3.3s;
+    stroke-dasharray:222.4010467529297 ;
+    stroke-dashoffset:222.4010467529297 ;
+    animation: line-anim 2s ease forwards 3s infinite;
+}
+#logo path:nth-child(13){
+    stroke-dasharray:335.3533020019531 ;
+    stroke-dashoffset:335.3533020019531 ;
+    animation: line-anim 2s ease forwards 3.3s infinite;
 }
 @keyframes line-anim{
     to{
         stroke-dashoffset: 0;
+
+    }
+}
+.content{
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.5s;
+    transform-origin: right;
+}
+.sci{
+    position: absolute;
+    bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    transition: 0.5s;
+    transform-origin: right;
+}
+.banner.active .sci{
+    transform: scale(0);
+    transform-origin: left;
+}
+.sci li{
+    list-style: none;
+}
+.sci li a{
+    display: inline-block;
+    margin-right: 20px;
+    filter: invert(1);
+    transform: scale(0.6);
+}
+.menu{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 2;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
+    transition-delay: 0s;
+}
+.banner.active .menu{
+    visibility: visible;
+    opacity: 1;
+    transition-delay: 1s;
+}
+.menu li{
+    list-style: none;
+}
+.menu li a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 2em;
+}
+@media(max-width: 991px){
+    header{
+        padding: 20px 40px;
+    }
+    .banner{
+        padding: 40px;
+        overflow: hidden;
+    }
+    .banner:before{
+        top: 100px;
+        left: 0;
+        width: 170px;
+        height: 310px;
+    }
+    .banner:after{
+        bottom: 0;
+        right: 0;
+        width: 80px;
+        height: 200px;
+    }
+    #logo{
+        top: 45%;
+        width: 120%;
     }
 }
